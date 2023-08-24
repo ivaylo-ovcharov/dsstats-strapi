@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feature_entities",
+  "info": {
+    "singularName": "feature-entity",
+    "pluralName": "feature-entities",
+    "displayName": "feature-entities"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "question",
+        "blocker",
+        "guide"
+      ]
+    },
+    "entity": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::feature.feature",
+      "inversedBy": "feature_entities"
+    }
+  }
+}

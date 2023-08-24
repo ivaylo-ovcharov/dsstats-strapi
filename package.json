@@ -1,0 +1,33 @@
+{
+  "name": "ds-stats-strpi",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@retikolo/drag-drop-content-types": "^1.3.9",
+    "@strapi/plugin-documentation": "^4.12.0",
+    "@strapi/plugin-i18n": "4.12.0",
+    "@strapi/plugin-users-permissions": "4.12.0",
+    "@strapi/strapi": "4.12.0",
+    "better-sqlite3": "8.0.1",
+    "strapi-plugin-populate-deep": "^3.0.0",
+    "strapi-plugin-transformer": "^3.1.0"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "b59e5abf-c840-4ce6-bd65-0b558bcdf9db"
+  },
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

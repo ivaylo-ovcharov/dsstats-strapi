@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feature_sections",
+  "info": {
+    "singularName": "feature-section",
+    "pluralName": "feature-sections",
+    "displayName": "Feature-sections"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "feature": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::feature.feature",
+      "inversedBy": "feature_section"
+    },
+    "feature_section_components": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::feature-section-component.feature-section-component",
+      "mappedBy": "feature_section"
+    }
+  }
+}

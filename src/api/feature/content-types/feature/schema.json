@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "features",
+  "info": {
+    "singularName": "feature",
+    "pluralName": "features",
+    "displayName": "Features",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "feature_entities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::feature-entity.feature-entity",
+      "mappedBy": "entity"
+    },
+    "feature_section": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::feature-section.feature-section",
+      "mappedBy": "feature"
+    }
+  }
+}

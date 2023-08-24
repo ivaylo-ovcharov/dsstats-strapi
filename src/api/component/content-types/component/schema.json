@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "components",
+  "info": {
+    "singularName": "component",
+    "pluralName": "components",
+    "displayName": "Components",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "Action",
+        "Picker",
+        "Input",
+        "Overlay",
+        "Display"
+      ]
+    },
+    "component_options": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::component-option.component-option",
+      "mappedBy": "component"
+    },
+    "version": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "richtext"
+    },
+    "design_system": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::design-system.design-system",
+      "inversedBy": "components"
+    },
+    "design_system_section": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::design-system-section.design-system-section",
+      "inversedBy": "components"
+    },
+    "feature_section_components": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::feature-section-component.feature-section-component",
+      "mappedBy": "component"
+    }
+  }
+}

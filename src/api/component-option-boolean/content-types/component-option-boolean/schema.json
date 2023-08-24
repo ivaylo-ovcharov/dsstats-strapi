@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "component_option_booleans",
+  "info": {
+    "singularName": "component-option-boolean",
+    "pluralName": "component-option-booleans",
+    "displayName": "Component-option-boolean",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "component_option": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::component-option.component-option",
+      "inversedBy": "component_option_boolean"
+    },
+    "component_option_status": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::component-option-status.component-option-status",
+      "inversedBy": "component_option_booleans"
+    }
+  }
+}

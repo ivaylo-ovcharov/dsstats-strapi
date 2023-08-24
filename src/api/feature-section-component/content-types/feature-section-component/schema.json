@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feature_section_components",
+  "info": {
+    "singularName": "feature-section-component",
+    "pluralName": "feature-section-components",
+    "displayName": "Feature-section-components",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "feature_section": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::feature-section.feature-section",
+      "inversedBy": "feature_section_components"
+    },
+    "options": {
+      "type": "json"
+    },
+    "name": {
+      "type": "string"
+    },
+    "component": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::component.component",
+      "inversedBy": "feature_section_components"
+    }
+  }
+}

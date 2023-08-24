@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "component_options",
+  "info": {
+    "singularName": "component-option",
+    "pluralName": "component-options",
+    "displayName": "Component-options",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Boolean",
+        "Slot",
+        "Variant",
+        "Text"
+      ],
+      "required": true
+    },
+    "component": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::component.component",
+      "inversedBy": "component_options"
+    },
+    "component_option_variants": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::component-option-variant.component-option-variant",
+      "mappedBy": "component_option"
+    },
+    "component_option_boolean": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::component-option-boolean.component-option-boolean",
+      "mappedBy": "component_option"
+    },
+    "component_option_slots": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::component-option-slot.component-option-slot",
+      "mappedBy": "component_option"
+    },
+    "component_option_text": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::component-option-text.component-option-text",
+      "mappedBy": "component_option"
+    }
+  }
+}

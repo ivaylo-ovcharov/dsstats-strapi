@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "component_option_statuses",
+  "info": {
+    "singularName": "component-option-status",
+    "pluralName": "component-option-statuses",
+    "displayName": "Component-option-statuses",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
+    },
+    "component_option_booleans": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::component-option-boolean.component-option-boolean",
+      "mappedBy": "component_option_status"
+    },
+    "component_option_slots": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::component-option-slot.component-option-slot",
+      "mappedBy": "component_option_status"
+    },
+    "component_option_texts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::component-option-text.component-option-text",
+      "mappedBy": "component_option_status"
+    },
+    "component_option_variants": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::component-option-variant.component-option-variant",
+      "mappedBy": "component_option_status"
+    },
+    "installation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::installation.installation",
+      "inversedBy": "component_option_statuses"
+    },
+    "design_system": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::design-system.design-system",
+      "inversedBy": "component_option_statuses"
+    },
+    "textClass": {
+      "type": "string"
+    }
+  }
+}

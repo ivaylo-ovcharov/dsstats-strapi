@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "design_system_sections",
+  "info": {
+    "singularName": "design-system-section",
+    "pluralName": "design-system-sections",
+    "displayName": "Design-system-sections"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "components": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::component.component",
+      "mappedBy": "design_system_section"
+    },
+    "design_system": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::design-system.design-system",
+      "inversedBy": "design_system_sections"
+    }
+  }
+}
